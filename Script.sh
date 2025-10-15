@@ -22,10 +22,10 @@ echo "success $2"
 fi
 }
 
-yum install mysql -y>>LOG_FILE
+yum install mysql -y>>${LOG_FILE}
 VALIDATE $? "MySQL"
 
-yum install git -y>>LOG_FILE
+yum install git -y>>${LOG_FILE}
 VALIDATE $? "GIT"
 
 
