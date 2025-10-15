@@ -10,22 +10,21 @@ else
 echo "Root User"
 fi
 
-yum install mysql -y
 
-if [ $? -ne 0]
-then
-echo "ERROR Installing"
-else 
-echo "success"
-fi
-
-
-yum install git -y
-
+VALIDATE(){
 if [ $? -ne 0]
 then
 echo "ERROR git Installing"
 else 
 echo "success git"
 fi
+}
+
+yum install mysql -y
+VALIDATE
+
+yum install git -y
+VALIDATE
+
+
 
