@@ -1,6 +1,8 @@
 #!/bin/bash
 
+TIMESTAMP=date +%F-%H-%M
 ID=$(id -u)
+LOG_FILE="/log/$0-$TIMESTAMP.log"/
 
 if [ $ID -ne 0 ]
 then 
@@ -20,10 +22,10 @@ echo "success $2"
 fi
 }
 
-yum install mysql -y
+yum install mysql -y>>LOG_FILE
 VALIDATE $? "MySQL"
 
-yum install git -y
+yum install git -y>>LOG_FILE
 VALIDATE $? "GIT"
 
 
