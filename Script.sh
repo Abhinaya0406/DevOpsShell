@@ -12,19 +12,19 @@ fi
 
 
 VALIDATE(){
-if [ $? -ne 0]
+if [ $1 -ne 0]
 then
-echo "ERROR git Installing"
+echo "ERROR $2 Installing"
 else 
-echo "success git"
+echo "success $2"
 fi
 }
 
 yum install mysql -y
-VALIDATE
+VALIDATE $? "MySQL"
 
 yum install git -y
-VALIDATE
+VALIDATE $? "GIT"
 
 
 
