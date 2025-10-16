@@ -31,6 +31,7 @@ yum list installed $PACKAGE>$LOG_FILE
 
 if [ $? -ne 0 ]
 then
+echo "installing $PACKAGE"
 yum install $PACKAGE -y>$LOG_FILE
 
 VALIDATE $? $PACKAGE>$LOG_FILE
