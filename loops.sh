@@ -16,7 +16,7 @@ fi
 VALIDATE(){
 if [ $1 -ne 0 ]
 then
-echo "Already Installaed $2">$LOG_FILE
+echo "SUCCESS $2">$LOG_FILE
 else
 echo "FAILED $2">$LOG_FILE
 fi
@@ -37,7 +37,7 @@ VALIDATE $? $PACKAGE>$LOG_FILE
 
 else
 
-echo "$PACKAGE Already Installed"
+echo "already installed"
 fi
 done
 
