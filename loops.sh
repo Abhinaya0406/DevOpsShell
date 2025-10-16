@@ -14,6 +14,7 @@ fi
 
 
 VALIDATE(){
+	echo "validating"
 if [ $1 -ne 0 ]
 	then
 		echo "SUCCESS $2" &>>$LOG_FILE
