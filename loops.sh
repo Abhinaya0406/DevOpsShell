@@ -14,12 +14,12 @@ fi
 
 
 VALIDATE() {
-	echo "validating"
+	echo "validating $PACKAGE"
 if [ $1 -ne 0 ]
 	then
-		echo "SUCCESS $2" 
+		echo "FAILED $2" 
 	else
-		echo "FAILED $2"
+		echo "SUCCESS $2"
 fi
 }
 
