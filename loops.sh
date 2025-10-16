@@ -34,7 +34,7 @@ then
 echo "installing $PACKAGE"
 yum install $PACKAGE -y &>>$LOG_FILE
 
-VALIDATE $? $PACKAGE &>>$LOG_FILELOG_FILE
+VALIDATE $? $PACKAGE &>>$LOG_FILE
 
 else
 
