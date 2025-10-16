@@ -16,9 +16,9 @@ fi
 VALIDATE(){
 if [ $1 -ne 0 ]
 then
-echo "SUCCESS $2">$LOG_FILE
+echo "SUCCESS $2" &>>$LOG_FILE
 else
-echo "FAILED $2">$LOG_FILE
+echo "FAILED $2" &>>$LOG_FILE
 fi
 }
 
@@ -27,14 +27,14 @@ for PACKAGE in $@
 do
 echo $PACKAGE
 
-yum list installed $PACKAGE>$LOG_FILE
+yum list installed $PACKAGE &>>$LOG_FILE
 
 if [ $? -ne 0 ]
 then
 echo "installing $PACKAGE"
-yum install $PACKAGE -y>$LOG_FILE
+yum install $PACKAGE -y &>>$LOG_FILE
 
-VALIDATE $? $PACKAGE>$LOG_FILE
+VALIDATE $? $PACKAGE &>>$LOG_FILELOG_FILE
 
 else
 
