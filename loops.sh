@@ -32,8 +32,11 @@ yum list installed $PACKAGE
 if [ $? -ne 0 ]
 then
 yum install $PACKAGE -y>$LOG_FILE
-VALIDATE() $? $PACKAGE>$LOG_FILE
+
+VALIDATE() $? $PACKAGE
+
 else
+
 echo "$PACKAGE Already Installed"
 fi
 done
