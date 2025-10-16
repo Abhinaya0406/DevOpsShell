@@ -23,8 +23,8 @@ fi
 }
 
 for each $PACKAGE in $@
-
+do
 echo $PACKAGE
-
 yum install $PACKAGE -y>$LOG_FILE
 VALIDATE $? $PACKAGE>$LOG_FILE
+done
