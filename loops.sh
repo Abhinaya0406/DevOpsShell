@@ -27,7 +27,7 @@ for PACKAGE in $@
 do
 echo $PACKAGE
 
-yum list installed $PACKAGE
+yum list installed $PACKAGE>$LOG_FILE
 
 if [ $? -ne 0 ]
 then
@@ -37,7 +37,7 @@ VALIDATE $? $PACKAGE>$LOG_FILE
 
 else
 
-echo "already installed"
+echo "already installed--skipping $PACKAGE"
 fi
 done
 
