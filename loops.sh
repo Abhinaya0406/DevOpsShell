@@ -1,7 +1,7 @@
-!#/bin/bash
+#!/bin/bash
 
 ID=$(id -u)
-TIMESTAMP=date +%F-%H-%M
+TIMESTAMP=$(date +%F-%H-%M)
 LOG_FILE="/tmp/$0_$TIMESTAMP.log"
 
 if [ $ID -ne 0 ]
