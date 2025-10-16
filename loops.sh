@@ -30,6 +30,7 @@ do
 		if [ $? -ne 0 ]
 			then
 				yum install $PACKAGE -y &>>$LOG_FILE
+
 				VALIDATE $? $PACKAGE &>>$LOG_FILE
 		else
 				echo "already installed--skipping $PACKAGE"
