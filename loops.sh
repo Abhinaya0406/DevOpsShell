@@ -13,7 +13,7 @@ if [ $ID -ne 0 ]
 fi
 
 
-VALIDATE(){
+VALIDATE() {
 	echo "validating"
 if [ $1 -ne 0 ]
 	then
